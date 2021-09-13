@@ -4,6 +4,16 @@ let element = React.createElement("nav",  { className : 'links'},
                     React.createElement("a", { href : "#" },
                       "Home"
                     )
+                  ),
+                  React.createElement("li", null,
+                    React.createElement("a", { href : "#" },
+                      "Faq"
+                    )
+                  ),
+                  React.createElement("li", null,
+                    React.createElement("a", { href : "#" },
+                      "About"
+                    )
                   )
                 )
               );
