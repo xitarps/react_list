@@ -11,6 +11,13 @@
 
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-  <script src="components/index.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!--<script src="components/index.js"></script>-->
+  <script type="text/babel">
+    const element = <h1>Estudos de react</h1>
+
+    ReactDOM.render(element,document.querySelector("#root"));
+  </script>
 </body>
 </html>
