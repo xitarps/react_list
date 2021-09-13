@@ -15,12 +15,42 @@
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
   <script type="text/babel">
+
+    const say_something = function(){
+      alert('Something!')
+    }
+
+    const ask_confirm = ()=>{
+      confirm('ok or cancel?!')
+    }
+
+    const name = "Xita"
+    const result = 5*9
+
+    const menu = {
+      home : 'Home',
+      faq : 'Faq',
+      about : 'About'
+    }
+
     const element = (
-      <nav class="links-nav">
-        <ul class="links-ul">
-          <li class="links-nav">Home</li>
-          <li class="links-nav">Faq</li>
-          <li class="links-nav">About</li>
+      <nav className="links-nav">
+        <ul className="links-ul">
+          <li className="links-nav">{menu.home}</li>
+          <li className="links-nav">{menu.faq}</li>
+          <li className="links-nav">{menu.about}</li>
+          <li className="links-nav">{name}</li>
+          <li className="links-nav">{result}</li>
+          <li className="links-nav">
+            <a className="links-a" href="#" onClick={say_something} >
+              say something
+            </a>
+          </li>
+          <li className="links-nav">
+            <a className="links-a" href="#" onClick={ask_confirm} >
+              ask for confirmation
+            </a>
+          </li>
         </ul>
       </nav>
     )
