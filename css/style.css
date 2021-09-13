@@ -1,0 +1,14 @@
+body{
+  background-color: rgb(68, 68, 68);
+}
+.links-nav{
+  color: rgb(21, 255, 0);
+}
+.links-ul{
+  display: flex;
+  justify-content: space-between;
+}
+.links-a{
+  color: rgb(166, 255, 0);
+  text-decoration: none;
+}
