@@ -16,6 +16,10 @@
 
   <script type="text/babel">
 
+    const name = "Xita"
+    const result = 5*9
+    let menu = null
+
     const say_something = function(){
       alert('Something!')
     }
@@ -24,38 +28,56 @@
       confirm('ok or cancel?!')
     }
 
-    const name = "Xita"
-    const result = 5*9
 
-    const menu = {
-      home : 'Home',
-      faq : 'Faq',
-      about : 'About'
+    (()=>{
+      if(navigator.language == 'pt-BR'){
+        menu = {
+          home : 'Página inicial',
+          faq : 'Duvidas',
+          about : 'Sobre'
+        }
+      }else{
+        menu = {
+          home : 'Home',
+          faq : 'Faq',
+          about : 'About'
+        }
+      }
+    })();
+
+    const display = ()=>{
+      const element = (
+        <div>
+        <h1 className="text-green">Teste:</h1>
+        <nav className="links-nav">
+          <ul className="links-ul">
+            <li className="links-nav">{menu.home}</li>
+            <li className="links-nav">{menu.faq}</li>
+            <li className="links-nav">{menu.about}</li>
+            <li className="links-nav">{name}</li>
+            <li className="links-nav">{result}</li>
+            <li className="links-nav">
+              <a className="links-a" href="#" onClick={say_something} >
+                say something
+              </a>
+            </li>
+            <li className="links-nav">
+              <a className="links-a" href="#" onClick={ask_confirm} >
+                ask for confirmation
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <h3 className="text-green">{new Date().toLocaleTimeString()}</h3>
+        </div>
+      )
+      ReactDOM.render(element,document.querySelector("#root"));
     }
 
-    const element = (
-      <nav className="links-nav">
-        <ul className="links-ul">
-          <li className="links-nav">{menu.home}</li>
-          <li className="links-nav">{menu.faq}</li>
-          <li className="links-nav">{menu.about}</li>
-          <li className="links-nav">{name}</li>
-          <li className="links-nav">{result}</li>
-          <li className="links-nav">
-            <a className="links-a" href="#" onClick={say_something} >
-              say something
-            </a>
-          </li>
-          <li className="links-nav">
-            <a className="links-a" href="#" onClick={ask_confirm} >
-              ask for confirmation
-            </a>
-          </li>
-        </ul>
-      </nav>
-    )
+    display();
 
-    ReactDOM.render(element,document.querySelector("#root"));
+    setInterval(display, 1000);
+
   </script>
 </body>
 </html>

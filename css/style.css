@@ -9,6 +9,9 @@ body{
   justify-content: space-between;
 }
 .links-a{
-  color: rgb(166, 255, 0);
+  color: rgb(0, 110, 255);
   text-decoration: none;
+} 
+.text-green{
+  color: rgb(21, 255, 0);
 }
